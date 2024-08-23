@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Invoice Creator",
+  title: "Invoice Creator - Group",
   description: "Invoice creator example.",
 };
 
@@ -11,9 +10,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
+  return <section>{children}</section>;
 }
