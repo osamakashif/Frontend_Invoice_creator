@@ -5,8 +5,11 @@
 :root {
   --primary-background-colour: #ffffff;
   --primary-text-colour: #000000;
+  --primary-support-colour: #77428d;
   --secondary-background-colour: #77428d;
   --secondary-text-colour: #ffffff;
+  --tertiary-background-colour: #edc7ff;
+  --tertiary-text-colour: #242582;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,6 +18,8 @@
     --primary-text-colour: #ffffff;
     --secondary-background-colour: #ffffff;
     --secondary-text-colour: #77428d;
+    --tertiary-background-colour: #5f2b75;
+    --tertiary-text-colour: #f8e644;
   }
 }
 
@@ -26,6 +31,15 @@ body {
 .secondary-colour {
   color: var(--secondary-text-colour);
   background-color: var(--secondary-background-colour);
+}
+
+.tertiary-colour {
+  background-color: var(--tertiary-background-colour);
+  color: var(--primary-text-colour);
+}
+
+.tertiary-colour:hover {
+  color: var(--tertiary-text-colour);
 }
 
 .inner-content {

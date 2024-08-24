@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="flex justify-center">
       <button
-        className="secondary-colour p-5 rounded-xl mx-5"
+        className="tertiary-colour p-5 rounded-xl mx-5"
         type="button"
         onClick={() => router.push("/individual")}
       >
@@ -24,7 +24,7 @@ export default function Home() {
         <p>Individual</p>
       </button>
       <button
-        className="secondary-colour p-5 rounded-xl mx-5"
+        className="tertiary-colour p-5 rounded-xl mx-5"
         type="button"
         onClick={() => router.push("/group")}
       >
