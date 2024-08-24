@@ -13,7 +13,10 @@ export const Navbar = () => {
   return (
     <div className="flex justify-between items-center">
       <h1>
-        <a className="nav-link text-2xl px-2" onClick={() => router.push("/")}>
+        <a
+          className="no-underline hover:underline cursor-pointer text-2xl px-2"
+          onClick={() => router.push("/")}
+        >
           {title}
         </a>
       </h1>
@@ -21,7 +24,7 @@ export const Navbar = () => {
         {routes.map((route) => {
           return (
             <a
-              className="nav-link px-2"
+              className="no-underline hover:underline cursor-pointer px-2"
               onClick={() => router.push(route.path)}
               key={route.name}
             >
