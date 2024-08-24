@@ -11,9 +11,9 @@ export const Navbar = () => {
   ];
   const title: string = "Invoice Creator";
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between items-center">
       <h1>
-        <a className="nav-link" onClick={() => router.push("/")}>
+        <a className="nav-link text-2xl px-2" onClick={() => router.push("/")}>
           {title}
         </a>
       </h1>
