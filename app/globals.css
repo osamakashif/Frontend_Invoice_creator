@@ -27,8 +27,10 @@ body {
 }
 
 .inner-content {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 @layer utilities {

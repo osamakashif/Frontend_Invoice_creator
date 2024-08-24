@@ -1,6 +1,5 @@
 "use client";
 import { useRouter } from "next/navigation";
-import "./Navbar.css";
 
 export const Navbar = () => {
   const router = useRouter();
