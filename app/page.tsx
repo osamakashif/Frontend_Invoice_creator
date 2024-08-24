@@ -3,18 +3,20 @@ import { useRouter } from "next/navigation";
 
 export default function Home() {
   const router = useRouter();
+  const buttonClasses: string =
+    "tertiary-colour p-5 rounded-xl m-5 min-[801px]:my-0 min-w-40 max-[800px]:w-4/5 min-[801px]:w-2/5 min-[801px]:h-[60vh] flex items-center justify-center flex-col";
   return (
-    <main className="flex justify-center">
+    <main className="flex items-center justify-center h-full max-[800px]:flex-col">
       <button
-        className="tertiary-colour p-5 rounded-xl mx-5"
+        className={buttonClasses}
         type="button"
         onClick={() => router.push("/individual")}
       >
         <svg
           fill="currentColor"
           viewBox="0 0 56 56"
-          width="5rem"
-          height="5rem"
+          width="20vh"
+          height="20vh"
           xmlns="http://www.w3.org/2000/svg"
         >
           <g strokeWidth="0"></g>
@@ -24,15 +26,15 @@ export default function Home() {
         <p>Individual</p>
       </button>
       <button
-        className="tertiary-colour p-5 rounded-xl mx-5"
+        className={buttonClasses}
         type="button"
         onClick={() => router.push("/group")}
       >
         <svg
           fill="currentColor"
           viewBox="0 0 56 56"
-          width="5rem"
-          height="5rem"
+          width="20vh"
+          height="20vh"
           xmlns="http://www.w3.org/2000/svg"
         >
           <g strokeWidth="0"></g>
