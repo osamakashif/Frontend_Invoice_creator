@@ -60,6 +60,12 @@ input {
   padding-right: 10%;
 }
 
+.blocked-button {
+  background-color: #d3d3d3;
+  color: #363737;
+  cursor: default;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
