@@ -1,5 +1,8 @@
 "use client";
+import { Invoice } from "@/domain/invoice";
+import { generateAndDisplayInvoicePDF } from "@/utils/invoice-creation";
 import { downloadSampleCSV } from "@/utils/sample-file";
+import { getInvoicesFromSpreadsheet } from "@/utils/spreadsheet-handling";
 import { ChangeEvent, MouseEvent, useRef } from "react";
 
 export default function Group() {
@@ -13,10 +16,16 @@ export default function Group() {
   };
 
   const uploadFile = (uploadEvent: ChangeEvent<HTMLInputElement>) => {
-    const files = uploadEvent.target.files;
+    const files: FileList | null = uploadEvent.target.files;
     if (!files) return;
-    const spreadsheet = files[0];
-    //TO DO, handle file
+    const spreadsheet: File = files[0];
+    getInvoicesFromSpreadsheet(spreadsheet).then((invoices: Invoice[]) => {
+      invoices.forEach((invoice: Invoice) => {
+        // TO DO - Save all PDFs together somehow, maybe zip
+        // console.log("Invoice", invoice);
+        // generateAndDisplayInvoicePDF(invoice);
+      });
+    });
   };
 
   return (
