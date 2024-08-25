@@ -48,6 +48,10 @@ body {
   color: var(--tertiary-text-colour);
 }
 
+.hover-link:hover {
+  color: var(--tertiary-text-colour);
+}
+
 input {
   border: solid 2px var(--primary-text-colour);
   border-radius: 0.25rem;

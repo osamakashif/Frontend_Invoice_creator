@@ -28,7 +28,7 @@ export default function Group() {
       <p>
         Here is a{" "}
         <a
-          className="cursor-pointer underline"
+          className="cursor-pointer underline hover-link"
           onClick={() => {
             downloadSampleCSV();
           }}
