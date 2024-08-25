@@ -45,3 +45,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 1. [Person Fill SVG](https://www.svgrepo.com/svg/436843/person-fill) with [MIT License](https://www.svgrepo.com/page/licensing/#MIT) from [SVG Repo](https://www.svgrepo.com/). Edited.
 2. [Person 3 Fill SVG](https://www.svgrepo.com/svg/436838/person-3-fill) with [MIT License](https://www.svgrepo.com/page/licensing/#MIT) from [SVG Repo](https://www.svgrepo.com/). Edited.
+3. [Upload File SVG](https://www.svgrepo.com/svg/15583/upload-file) with [CC0 License](https://www.svgrepo.com/page/licensing/#CC0) from [SVG Repo](https://www.svgrepo.com/). Edited.
