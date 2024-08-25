@@ -1,16 +1,36 @@
 "use client";
+import { ChangeEvent, MouseEvent, useRef } from "react";
+
 export default function Group() {
+  const fileInputReference = useRef<HTMLInputElement>(null);
+
+  const triggerFileUpload = (clickEvent: MouseEvent<HTMLButtonElement>) => {
+    clickEvent.preventDefault();
+    if (fileInputReference && fileInputReference.current) {
+      fileInputReference.current.click();
+    }
+  };
+
+  const uploadFile = (uploadEvent: ChangeEvent<HTMLInputElement>) => {
+    const files = uploadEvent.target.files;
+    if (!files) return;
+    const spreadsheet = files[0];
+    //TO DO, handle file
+  };
+
   return (
     <main className="flex justify-center">
       <button
         className="tertiary-colour p-5 rounded-xl m-5 w-4/5 flex flex-col items-center"
         type="button"
-        onClick={() => {}}
+        onClick={(clickEvent) => {
+          triggerFileUpload(clickEvent);
+        }}
       >
         <svg
           fill="currentColor"
-          width="20vh"
-          height="20vh"
+          width="10vh"
+          height="10vh"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 488.9 488.9"
         >
@@ -20,6 +40,15 @@ export default function Group() {
         </svg>
         <p>Upload file</p>
       </button>
+      <input
+        ref={fileInputReference}
+        type="file"
+        accept=".csv,.tsv"
+        hidden
+        onChange={(uploadEvent) => {
+          uploadFile(uploadEvent);
+        }}
+      />
     </main>
   );
 }
