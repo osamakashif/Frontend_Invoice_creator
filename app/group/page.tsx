@@ -21,8 +21,8 @@ export default function Group() {
   const downloadSampleCSV = () => {
     const rows = [
       ["name", "email", "rate", "hours"],
-      ["Firstname Lastname", "email", "40", "300"],
-      ["Samplename", "email", "10", "3000"],
+      ["Firstname Lastname", "email", "40", "3000"],
+      ["Samplename", "email", "10", "4000"],
       ["Another name", "email", "40", "10000"],
     ];
     let csvContent = "data:text/csv;charset=utf-8,";
