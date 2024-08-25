@@ -1,4 +1,5 @@
 "use client";
+import { downloadSampleCSV } from "@/utils/sample-file";
 import { ChangeEvent, MouseEvent, useRef } from "react";
 
 export default function Group() {
@@ -16,26 +17,6 @@ export default function Group() {
     if (!files) return;
     const spreadsheet = files[0];
     //TO DO, handle file
-  };
-
-  const downloadSampleCSV = () => {
-    const rows = [
-      ["name", "email", "rate", "hours"],
-      ["Firstname Lastname", "email", "40", "3000"],
-      ["Samplename", "email", "10", "4000"],
-      ["Another name", "email", "40", "10000"],
-    ];
-    let csvContent = "data:text/csv;charset=utf-8,";
-    rows.forEach((rowLine) => {
-      let row = rowLine.join(",");
-      csvContent += row + "\r\n";
-    });
-    let encodedUri = encodeURI(csvContent);
-    let link = document.createElement("a");
-    link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "sample.csv");
-    document.body.appendChild(link);
-    link.click();
   };
 
   return (
