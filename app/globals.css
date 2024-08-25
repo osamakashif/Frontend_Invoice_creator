@@ -21,6 +21,11 @@
     --tertiary-background-colour: #5f2b75;
     --tertiary-text-colour: #f8e644;
   }
+
+  input {
+    background-color: var(--secondary-background-colour);
+    color: #000000;
+  }
 }
 
 body {
@@ -41,6 +46,11 @@ body {
 
 .tertiary-colour:hover {
   color: var(--tertiary-text-colour);
+}
+
+input {
+  border: solid 2px var(--primary-text-colour);
+  border-radius: 0.25rem;
 }
 
 .inner-content {
