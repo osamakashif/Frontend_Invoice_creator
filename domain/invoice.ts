@@ -24,6 +24,7 @@ export class Invoice {
   private calculateIncomeTax = (revenue: number): number => {
     let incomeTax: number = 0;
     let valueAlreadyTaxed: number = 0;
+    let withinBracketCalculated: boolean = false;
     const taxBrackets: TaxBracket[] = [
       { limit: 1950000, rate: 0.05 },
       { limit: 3300000, rate: 0.1 },
@@ -34,12 +35,16 @@ export class Invoice {
       { limit: undefined, rate: 0.45 },
     ];
     taxBrackets.forEach((taxBracket: TaxBracket) => {
+      if (withinBracketCalculated) {
+        return;
+      }
       const taxBracketRate: number = taxBracket.rate;
       if (taxBracket.limit) {
         const taxBracketLimit: number = taxBracket.limit;
         if (revenue < taxBracketLimit) {
           incomeTax += (revenue - valueAlreadyTaxed) * taxBracketRate;
-          return incomeTax;
+          withinBracketCalculated = true;
+          return;
         }
         incomeTax += (taxBracketLimit - valueAlreadyTaxed) * taxBracketRate;
         valueAlreadyTaxed += taxBracketLimit;
