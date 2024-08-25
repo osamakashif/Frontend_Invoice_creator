@@ -28,7 +28,16 @@ const validateNotEmptyString = (stringValue: string): boolean => {
   return stringValue.trim() !== "";
 };
 
-export const createInvoice = (invoice: Invoice) => {
+export const generateAndDisplayInvoicePDF = (invoice: Invoice) => {
+  createInvoicePDF(invoice).then((pdf: Uint8Array) => {
+    const blob = new Blob([pdf.buffer], { type: "application/pdf" });
+    window.open(URL.createObjectURL(blob));
+  });
+};
+
+export const createInvoicePDF = async (
+  invoice: Invoice
+): Promise<Uint8Array> => {
   const template: Template = {
     basePdf: BLANK_PDF,
     schemas: [
@@ -138,8 +147,5 @@ export const createInvoice = (invoice: Invoice) => {
       profit: invoice.profit.toString(),
     },
   ];
-  generate({ template, inputs }).then((pdf) => {
-    const blob = new Blob([pdf.buffer], { type: "application/pdf" });
-    window.open(URL.createObjectURL(blob));
-  });
+  return generate({ template, inputs });
 };
