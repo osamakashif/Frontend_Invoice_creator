@@ -30,7 +30,7 @@ export const IndividualTable = () => {
           </tr>
         </tbody>
       </table>
-      <button className="tertiary-colour p-2 rounded-xl">
+      <button className="tertiary-colour p-2 rounded-xl font-bold">
         Generate invoice
       </button>
     </div>
