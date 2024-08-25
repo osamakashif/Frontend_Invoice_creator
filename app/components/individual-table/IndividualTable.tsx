@@ -1,36 +1,31 @@
 export const IndividualTable = () => {
+  const inputClassNames: string = "w-[40vh] min-[801px]:w-[80vh]";
   return (
-    <div>
-      <table>
+    <div className="flex flex-col items-center">
+      <table className="border-separate border-spacing-2">
         <tbody>
           <tr>
             <td>Name</td>
             <td>
-              <input></input>
+              <input className={inputClassNames}></input>
             </td>
           </tr>
           <tr>
             <td>Email</td>
             <td>
-              <input type="email"></input>
+              <input className={inputClassNames} type="email"></input>
             </td>
           </tr>
           <tr>
-            <td>Phone number</td>
+            <td>Rate</td>
             <td>
-              <input></input>
-            </td>
-          </tr>
-          <tr>
-            <td>Hourly rate</td>
-            <td>
-              <input type="number"></input>
+              <input className={inputClassNames} type="number"></input>
             </td>
           </tr>
           <tr>
             <td>Hours</td>
             <td>
-              <input type="number"></input>
+              <input className={inputClassNames} type="number"></input>
             </td>
           </tr>
         </tbody>
