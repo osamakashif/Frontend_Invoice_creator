@@ -1,4 +1,5 @@
 "use client";
+import { Invoice } from "@/domain/invoice";
 import { createInvoice, validateOptions } from "@/utils/invoice-creation";
 import { useEffect, useState } from "react";
 
@@ -80,7 +81,7 @@ export const IndividualTable = () => {
         }
         onClick={() => {
           if (validOptions) {
-            createInvoice(name, email, rate, hours);
+            createInvoice(new Invoice(name, email, rate, hours));
           }
         }}
       >

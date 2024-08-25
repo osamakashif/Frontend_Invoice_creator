@@ -1,3 +1,5 @@
+import { Invoice } from "@/domain/invoice";
+
 export const validateOptions = (
   name: string,
   email: string,
@@ -24,16 +26,6 @@ const validateNotEmptyString = (stringValue: string): boolean => {
   return stringValue.trim() !== "";
 };
 
-export const createInvoice = (
-  name: string,
-  email: string,
-  rate: number,
-  hours: number
-) => {
+export const createInvoice = (invoice: Invoice) => {
   // TO DO
-};
-
-const calculateTax = (revenue: number): number => {
-  // TO DO
-  return 0;
 };
