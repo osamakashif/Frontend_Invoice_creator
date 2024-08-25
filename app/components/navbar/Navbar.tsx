@@ -11,14 +11,12 @@ export const Navbar = () => {
   const title: string = "Invoice Creator";
   return (
     <div className="flex justify-between items-center">
-      <h1>
-        <a
-          className="no-underline hover:underline cursor-pointer text-2xl px-2"
-          onClick={() => router.push("/")}
-        >
-          {title}
-        </a>
-      </h1>
+      <a
+        className="no-underline hover:underline cursor-pointer text-2xl px-2"
+        onClick={() => router.push("/")}
+      >
+        {title}
+      </a>
       <div>
         {routes.map((route) => {
           return (
