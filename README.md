@@ -50,3 +50,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Packages used
 
 1. [pdfme](https://pdfme.com/) - Free and open source PDF generation library. [[Website]](https://pdfme.com/) [[GitHub repository]](https://github.com/pdfme/pdfme)
+2. [JSZip](https://stuk.github.io/jszip/) - A javascript library for creating, reading and editing zip files. [[Website]](https://stuk.github.io/jszip/) [[GitHub repository]](https://github.com/Stuk/jszip)
