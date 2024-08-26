@@ -7,7 +7,8 @@ import {
 import { useEffect, useState } from "react";
 
 export const IndividualTable = () => {
-  const inputClassNames: string = "w-[40vh] min-[801px]:w-[80vh]";
+  const inputClassNames: string =
+    "w-[40vh] max-w-[200px] min-[801px]:w-[80vh] min-[801px]: max-w-[750px]";
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [rate, setRate] = useState<number>(0);
