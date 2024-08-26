@@ -1,6 +1,9 @@
 "use client";
 import { Invoice } from "@/domain/invoice";
-import { generateAndDisplayInvoicePDF } from "@/utils/invoice-creator";
+import {
+  generateAndDisplayInvoicePDF,
+  generateMultiInvoicePDFZip,
+} from "@/utils/invoice-creator";
 import { downloadSampleCSV } from "@/utils/sample-file";
 import { getInvoicesFromSpreadsheet } from "@/utils/spreadsheet-handler";
 import { ChangeEvent, MouseEvent, useRef } from "react";
@@ -20,11 +23,7 @@ export default function Group() {
     if (!files) return;
     const spreadsheet: File = files[0];
     getInvoicesFromSpreadsheet(spreadsheet).then((invoices: Invoice[]) => {
-      invoices.forEach((invoice: Invoice) => {
-        // TO DO - Save all PDFs together somehow, maybe zip
-        // console.log("Invoice", invoice);
-        // generateAndDisplayInvoicePDF(invoice);
-      });
+      generateMultiInvoicePDFZip(invoices);
     });
   };
 

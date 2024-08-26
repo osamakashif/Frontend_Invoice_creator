@@ -33,3 +33,11 @@ export const generateAndDisplayInvoicePDF = (invoice: Invoice) => {
     window.open(URL.createObjectURL(blob));
   });
 };
+
+export const generateMultiInvoicePDFZip = (invoices: Invoice[]) => {
+  invoices.forEach((invoice: Invoice) => {
+    createInvoicePDF(invoice).then((pdf: Uint8Array) => {
+      // Add to zip file
+    });
+  });
+};
