@@ -1,5 +1,5 @@
 {
-  "name": "frontend-invoice-creator",
+  "name": "invoice-creator",
   "version": "0.1.0",
   "private": true,
   "scripts": {
