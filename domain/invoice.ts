@@ -11,7 +11,16 @@ export class Invoice {
   preTaxTotal: number;
   incomeTax: number;
   profit: number;
-  constructor(name: string, email: string, rate: number, hours: number) {
+  startDate: Date;
+  endDate: Date;
+  constructor(
+    name: string,
+    email: string,
+    rate: number,
+    hours: number,
+    startDate: Date,
+    endDate: Date
+  ) {
     this.name = name;
     this.email = email;
     this.rate = rate;
@@ -19,6 +28,8 @@ export class Invoice {
     this.preTaxTotal = rate * hours;
     this.incomeTax = this.calculateIncomeTax(this.preTaxTotal);
     this.profit = this.preTaxTotal - this.incomeTax;
+    this.startDate = startDate;
+    this.endDate = endDate;
   }
 
   private calculateIncomeTax = (revenue: number): number => {

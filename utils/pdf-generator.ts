@@ -1,6 +1,7 @@
 import { Invoice } from "@/domain/invoice";
 import { BLANK_PDF, Template } from "@pdfme/common";
 import { generate } from "@pdfme/generator";
+import { invoiceDateRange } from "./date-formatter";
 
 export const createInvoicePDF = async (
   invoice: Invoice
@@ -398,7 +399,7 @@ export const createInvoicePDF = async (
   };
   const inputs = [
     {
-      dateSpan: "Date_span",
+      dateSpan: invoiceDateRange(invoice.startDate, invoice.endDate),
       name: invoice.name,
       email: invoice.email,
       hourlyRate: "¥ " + invoice.rate.toString() + "/hr",

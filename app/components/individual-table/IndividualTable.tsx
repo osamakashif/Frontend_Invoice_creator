@@ -1,5 +1,6 @@
 "use client";
 import { Invoice } from "@/domain/invoice";
+import { inputFormatDate } from "@/utils/date-formatter";
 import {
   generateAndDisplayInvoicePDF,
   validateOptions,
@@ -13,12 +14,25 @@ export const IndividualTable = () => {
   const [email, setEmail] = useState<string>("");
   const [rate, setRate] = useState<number>(0);
   const [hours, setHours] = useState<number>(0);
+  const [startDate, setStartDate] = useState<Date>(new Date());
+  const [endDate, setEndDate] = useState<Date>(new Date());
 
   const [validOptions, setValidOptions] = useState<boolean>(false);
 
   useEffect(() => {
-    setValidOptions(validateOptions(name, email, rate, hours));
-  }, [name, email, rate, hours, validOptions, setValidOptions]);
+    setValidOptions(
+      validateOptions(name, email, rate, hours) && startDate <= endDate
+    );
+  }, [
+    name,
+    email,
+    rate,
+    hours,
+    startDate,
+    endDate,
+    validOptions,
+    setValidOptions,
+  ]);
 
   const assignNumber = (newValueString: string): number => {
     const newValue = parseFloat(newValueString);
@@ -76,6 +90,32 @@ export const IndividualTable = () => {
               ></input>
             </td>
           </tr>
+          <tr>
+            <td>Start date</td>
+            <td>
+              <input
+                className={inputClassNames}
+                type="date"
+                value={inputFormatDate(startDate)}
+                onChange={(event) => {
+                  setStartDate(new Date(event.target.value));
+                }}
+              ></input>
+            </td>
+          </tr>
+          <tr>
+            <td>End date</td>
+            <td>
+              <input
+                className={inputClassNames}
+                type="date"
+                value={inputFormatDate(endDate)}
+                onChange={(event) => {
+                  setEndDate(new Date(event.target.value));
+                }}
+              ></input>
+            </td>
+          </tr>
         </tbody>
       </table>
       <button
@@ -85,7 +125,9 @@ export const IndividualTable = () => {
         }
         onClick={() => {
           if (validOptions) {
-            generateAndDisplayInvoicePDF(new Invoice(name, email, rate, hours));
+            generateAndDisplayInvoicePDF(
+              new Invoice(name, email, rate, hours, startDate, endDate)
+            );
           }
         }}
       >

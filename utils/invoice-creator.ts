@@ -16,6 +16,10 @@ export const validateOptions = (
   );
 };
 
+export const validateDate = (date: Date): boolean => {
+  return date instanceof Date && !isNaN(date.getTime());
+};
+
 const validateRate = (rate: number): boolean => {
   return !(rate <= 0);
 };
