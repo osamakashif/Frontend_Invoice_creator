@@ -16,4 +16,5 @@ export const downloadSampleCSV = () => {
   link.setAttribute("download", "sample.csv");
   document.body.appendChild(link);
   link.click();
+  document.body.removeChild(link);
 };
