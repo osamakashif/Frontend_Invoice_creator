@@ -2,18 +2,27 @@ export const validateOptions = (
   name: string,
   email: string,
   rate: number,
-  hours: number
+  hours: number,
+  startDate: Date,
+  endDate: Date
 ): boolean => {
   return (
     validateNotEmptyString(name) &&
     validateNotEmptyString(email) &&
     validateRate(rate) &&
-    validateHours(hours)
+    validateHours(hours) &&
+    validateDate(startDate) &&
+    validateDate(endDate) &&
+    validateDateRange(startDate, endDate)
   );
 };
 
 export const validateDate = (date: Date): boolean => {
   return date instanceof Date && !isNaN(date.getTime());
+};
+
+const validateDateRange = (startDate: Date, endDate: Date): boolean => {
+  return startDate <= endDate;
 };
 
 const validateRate = (rate: number): boolean => {

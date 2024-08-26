@@ -19,7 +19,7 @@ export const IndividualTable = () => {
 
   useEffect(() => {
     setValidOptions(
-      validateOptions(name, email, rate, hours) && startDate <= endDate
+      validateOptions(name, email, rate, hours, startDate, endDate)
     );
   }, [
     name,
