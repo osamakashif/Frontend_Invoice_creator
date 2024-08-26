@@ -402,11 +402,11 @@ export const createInvoicePDF = async (
       dateSpan: invoiceDateRange(invoice.startDate, invoice.endDate),
       name: invoice.name,
       email: invoice.email,
-      hourlyRate: "¥ " + invoice.rate.toString() + "/hr",
-      hours: invoice.hours.toString() + " hours",
-      incomeBeforeTax: "¥ " + invoice.preTaxTotal.toString(),
-      tax: "¥ " + invoice.incomeTax.toString(),
-      incomeAfterTax: "¥ " + invoice.profit.toString(),
+      hourlyRate: "¥ " + invoice.rate.toFixed(0) + "/hr",
+      hours: invoice.hours.toFixed(0) + " hours",
+      incomeBeforeTax: "¥ " + invoice.preTaxTotal.toFixed(0),
+      tax: "¥ " + invoice.incomeTax.toFixed(0),
+      incomeAfterTax: "¥ " + invoice.profit.toFixed(0),
     },
   ];
   return generate({ template, inputs });
