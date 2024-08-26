@@ -1,10 +1,8 @@
 "use client";
 import { Invoice } from "@/domain/invoice";
 import { inputFormatDate } from "@/utils/date-formatter";
-import {
-  generateAndDisplayInvoicePDF,
-  validateOptions,
-} from "@/utils/invoice-creator";
+import { generateAndDisplayInvoicePDF } from "@/utils/invoice-creator";
+import { validateOptions } from "@/utils/validators";
 import { useEffect, useState } from "react";
 
 export const IndividualTable = () => {

@@ -1,5 +1,5 @@
 import { Invoice } from "@/domain/invoice";
-import { validateDate } from "./invoice-creator";
+import { validateDate } from "./validators";
 
 export const jsonToInvoice = (json_data: object): Invoice | undefined => {
   let name: string = "";
