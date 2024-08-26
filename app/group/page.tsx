@@ -1,8 +1,8 @@
 "use client";
 import { Invoice } from "@/domain/invoice";
-import { generateAndDisplayInvoicePDF } from "@/utils/invoice-creation";
+import { generateAndDisplayInvoicePDF } from "@/utils/invoice-creator";
 import { downloadSampleCSV } from "@/utils/sample-file";
-import { getInvoicesFromSpreadsheet } from "@/utils/spreadsheet-handling";
+import { getInvoicesFromSpreadsheet } from "@/utils/spreadsheet-handler";
 import { ChangeEvent, MouseEvent, useRef } from "react";
 
 export default function Group() {

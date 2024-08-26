@@ -3,7 +3,7 @@ import { Invoice } from "@/domain/invoice";
 import {
   generateAndDisplayInvoicePDF,
   validateOptions,
-} from "@/utils/invoice-creation";
+} from "@/utils/invoice-creator";
 import { useEffect, useState } from "react";
 
 export const IndividualTable = () => {

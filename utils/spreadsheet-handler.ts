@@ -1,5 +1,5 @@
 import { Invoice } from "@/domain/invoice";
-import { csvToJSON, tsvToJSON } from "./json-transformers";
+import { csvToJSON, tsvToJSON } from "./json-transformer";
 import { jsonToInvoice } from "./json-to-invoice";
 
 export const getInvoicesFromSpreadsheet = async (
