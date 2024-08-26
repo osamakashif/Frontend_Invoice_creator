@@ -2,6 +2,7 @@
   "name": "invoice-creator",
   "version": "0.1.0",
   "private": true,
+  "author": {"name": "Osama Kashif", "url": "https://osamakashif.dev/"},
   "scripts": {
     "dev": "next dev",
     "build": "next build",
