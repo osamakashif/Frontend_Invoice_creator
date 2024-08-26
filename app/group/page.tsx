@@ -1,9 +1,6 @@
 "use client";
 import { Invoice } from "@/domain/invoice";
-import {
-  generateAndDisplayInvoicePDF,
-  generateMultiInvoicePDFZip,
-} from "@/utils/invoice-creator";
+import { generateMultiInvoicePDFZip } from "@/utils/invoice-creator";
 import { downloadSampleCSV } from "@/utils/sample-file";
 import { getInvoicesFromSpreadsheet } from "@/utils/spreadsheet-handler";
 import { ChangeEvent, MouseEvent, useRef } from "react";
