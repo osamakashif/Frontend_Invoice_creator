@@ -1,8 +1,6 @@
-"use client";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export const Navbar = () => {
-  const router = useRouter();
   const routes = [
     { name: "Home", path: "/" },
     { name: "Individual", path: "/individual" },
@@ -11,22 +9,22 @@ export const Navbar = () => {
   const title: string = "Invoice Creator";
   return (
     <div className="flex justify-between items-center">
-      <a
+      <Link
         className="no-underline hover:underline cursor-pointer text-2xl px-2"
-        onClick={() => router.push("/")}
+        href="/"
       >
         {title}
-      </a>
+      </Link>
       <div>
         {routes.map((route) => {
           return (
-            <a
+            <Link
               className="no-underline hover:underline cursor-pointer px-2"
-              onClick={() => router.push(route.path)}
+              href={route.path}
               key={route.name}
             >
               {route.name}
-            </a>
+            </Link>
           );
         })}
       </div>
