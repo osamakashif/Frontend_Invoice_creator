@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 export const IndividualTable = () => {
   const inputClassNames: string =
     "w-[40vh] max-w-[200px] min-[801px]:w-[80vh] min-[801px]:max-w-[750px]";
-  const internalDivClassNames: string = "flex py-1";
+  const internalDivClassNames: string = "flex py-1 items-center";
   const externalDivClassNames: string = "flex flex-col py-3";
   const labelClassNames: string = "min-w-[6rem]";
   const [name, setName] = useState<string>("");
