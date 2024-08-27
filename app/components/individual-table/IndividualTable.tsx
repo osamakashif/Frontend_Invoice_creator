@@ -10,7 +10,7 @@ export const IndividualTable = () => {
     "w-[40vh] max-w-[200px] min-[801px]:w-[80vh] min-[801px]:max-w-[750px]";
   const internalDivClassNames: string = "flex py-1 items-center";
   const externalDivClassNames: string = "flex flex-col py-3";
-  const labelClassNames: string = "min-w-[6rem]";
+  const labelClassNames: string = "min-w-[7rem]";
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [rate, setRate] = useState<number>(0);
