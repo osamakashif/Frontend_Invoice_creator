@@ -34,7 +34,9 @@ export default function Group() {
         Here is a{" "}
         <a
           className="cursor-pointer underline hover-link"
-          onClick={() => {
+          href="sample.csv"
+          onClick={(mouseEvent: MouseEvent) => {
+            mouseEvent.preventDefault();
             downloadSampleCSV();
           }}
         >
