@@ -4,6 +4,10 @@ export const inputFormatDate = (date: Date): string => {
     .split("T")[0];
 };
 
+const formattedDate = (date: Date): string => {
+  return inputFormatDate(date).replaceAll("-", "/");
+};
+
 export const invoiceDateRange = (startDate: Date, endDate: Date): string => {
-  return `${inputFormatDate(startDate)} to ${inputFormatDate(endDate)}`;
+  return `${formattedDate(startDate)} - ${formattedDate(endDate)}`;
 };
