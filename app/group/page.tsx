@@ -26,15 +26,17 @@ export default function Group() {
 
   return (
     <main>
-      <h1 className="text-4xl">Group invoicing</h1>
+      <h1 className="text-4xl pb-5">Group invoicing</h1>
       <p>
         You can upload a CSV or TSV file to generate multiple invoices quickly.
       </p>
-      <p>
+      <p className="pb-5">
         Here is a{" "}
         <a
           className="cursor-pointer underline hover-link"
-          onClick={() => {
+          href="sample.csv"
+          onClick={(mouseEvent: MouseEvent) => {
+            mouseEvent.preventDefault();
             downloadSampleCSV();
           }}
         >

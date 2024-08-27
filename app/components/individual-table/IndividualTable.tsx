@@ -7,7 +7,10 @@ import { useEffect, useState } from "react";
 
 export const IndividualTable = () => {
   const inputClassNames: string =
-    "w-[40vh] max-w-[200px] min-[801px]:w-[80vh] min-[801px]: max-w-[750px]";
+    "w-[40vh] max-w-[200px] min-[801px]:w-[80vh] min-[801px]:max-w-[750px]";
+  const internalDivClassNames: string = "flex py-1 items-center";
+  const externalDivClassNames: string = "flex flex-col py-3";
+  const labelClassNames: string = "min-w-[6rem]";
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [rate, setRate] = useState<number>(0);
@@ -39,83 +42,104 @@ export const IndividualTable = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <table className="border-separate border-spacing-2">
-        <tbody>
-          <tr>
-            <td>Name</td>
-            <td>
-              <input
-                className={inputClassNames}
-                onChange={(event) => {
-                  setName(event.target.value);
-                }}
-              ></input>
-            </td>
-          </tr>
-          <tr>
-            <td>Email</td>
-            <td>
-              <input
-                className={inputClassNames}
-                type="email"
-                onChange={(event) => {
-                  setEmail(event.target.value);
-                }}
-              ></input>
-            </td>
-          </tr>
-          <tr>
-            <td>Rate</td>
-            <td>
-              <input
-                className={inputClassNames}
-                type="number"
-                onChange={(event) => {
-                  setRate(assignNumber(event.target.value));
-                }}
-              ></input>
-            </td>
-          </tr>
-          <tr>
-            <td>Hours</td>
-            <td>
-              <input
-                className={inputClassNames}
-                type="number"
-                onChange={(event) => {
-                  setHours(assignNumber(event.target.value));
-                }}
-              ></input>
-            </td>
-          </tr>
-          <tr>
-            <td>Start date</td>
-            <td>
-              <input
-                className={inputClassNames}
-                type="date"
-                value={inputFormatDate(startDate)}
-                onChange={(event) => {
-                  setStartDate(new Date(event.target.value));
-                }}
-              ></input>
-            </td>
-          </tr>
-          <tr>
-            <td>End date</td>
-            <td>
-              <input
-                className={inputClassNames}
-                type="date"
-                value={inputFormatDate(endDate)}
-                onChange={(event) => {
-                  setEndDate(new Date(event.target.value));
-                }}
-              ></input>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div className={externalDivClassNames}>
+        <div className={internalDivClassNames}>
+          <label htmlFor="name" className={labelClassNames}>
+            Name
+          </label>
+          <input
+            id="name"
+            aria-label="name"
+            alt="name"
+            className={inputClassNames}
+            onChange={(event) => {
+              setName(event.target.value);
+            }}
+          ></input>
+        </div>
+        <div className={internalDivClassNames}>
+          <label htmlFor="email" className={labelClassNames}>
+            Email
+          </label>
+          <input
+            id="email"
+            aria-label="email"
+            alt="email"
+            className={inputClassNames}
+            type="email"
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
+          ></input>
+        </div>
+      </div>
+
+      <div className={externalDivClassNames}>
+        <div className={internalDivClassNames}>
+          <label htmlFor="rate" className={labelClassNames}>
+            Rate (JPY/hr)
+          </label>
+          <input
+            id="rate"
+            className={inputClassNames}
+            aria-label="Rate in Japanese Yen per hour"
+            alt="rate"
+            type="number"
+            onChange={(event) => {
+              setRate(assignNumber(event.target.value));
+            }}
+          ></input>
+        </div>
+        <div className={internalDivClassNames}>
+          <label htmlFor="hours" className={labelClassNames}>
+            Hours
+          </label>
+          <input
+            id="hours"
+            className={inputClassNames}
+            aria-label="hours"
+            alt="hours"
+            type="number"
+            onChange={(event) => {
+              setHours(assignNumber(event.target.value));
+            }}
+          ></input>
+        </div>
+      </div>
+      <div className={externalDivClassNames}>
+        <div className={internalDivClassNames}>
+          <label htmlFor="startDate" className={labelClassNames}>
+            Start date
+          </label>
+          <input
+            id="startDate"
+            className={inputClassNames}
+            aria-label="start date"
+            alt="start date"
+            type="date"
+            value={inputFormatDate(startDate)}
+            onChange={(event) => {
+              setStartDate(new Date(event.target.value));
+            }}
+          ></input>
+        </div>
+        <div className={internalDivClassNames}>
+          <label htmlFor="endDate" className={labelClassNames}>
+            End date
+          </label>
+          <input
+            id="endDate"
+            className={inputClassNames}
+            aria-label="end date"
+            alt="end date"
+            type="date"
+            value={inputFormatDate(endDate)}
+            onChange={(event) => {
+              setEndDate(new Date(event.target.value));
+            }}
+          ></input>
+        </div>
+      </div>
       <button
         className={
           "p-2 rounded-xl font-bold" +
